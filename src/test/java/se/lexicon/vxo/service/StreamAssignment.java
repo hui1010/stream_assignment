@@ -239,7 +239,7 @@ public class StreamAssignment {
      * Extract from people a map where each key is a last name with a value containing a list of all that has that lastName
      */
     @Test
-    public void task13(){
+    public void task13(){ //todo maybe can make the code even clearer
         int expectedSize = 107;
         Map<String, List<Person>> personMap = null;
 
