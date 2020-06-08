@@ -239,12 +239,12 @@ public class StreamAssignment {
      * Extract from people a map where each key is a last name with a value containing a list of all that has that lastName
      */
     @Test
-    public void task13(){ //todo maybe can make the code even clearer
+    public void task13(){ 
         int expectedSize = 107;
         Map<String, List<Person>> personMap = null;
 
         //Write code here
-        personMap = new HashMap<>();
+        /*personMap = new HashMap<>();
         List<String> keys = people.stream().map(Person::getLastName).distinct().collect(Collectors.toList());
 
         for(String k : keys){
@@ -253,7 +253,10 @@ public class StreamAssignment {
                 .collect(Collectors.toList());
 
             personMap.put(k,values);
-        }
+        }*/
+
+        personMap = people.stream().collect(Collectors.groupingBy(Person::getLastName));
+
 
         assertNotNull(personMap);
         assertEquals(expectedSize, personMap.size());
